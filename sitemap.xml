@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/wiki/test/</loc>
+    <loc>http://yoursite.com/wiki/test-11/</loc>
     
     <lastmod>2021-11-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/wiki/test-11/</loc>
+    <loc>http://yoursite.com/wiki/test/</loc>
     
-    <lastmod>2021-11-03</lastmod>
+    <lastmod>2021-11-04</lastmod>
     
   </url>
   
@@ -59,6 +59,20 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://yoursite.com/tags/python/</loc>
+    <lastmod>2021-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>http://yoursite.com/categories/python/</loc>
+    <lastmod>2021-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>
