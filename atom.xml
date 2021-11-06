@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-11-04T13:43:50.747Z</updated>
+  <updated>2021-11-06T08:22:34.037Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>删除list中重复元素</title>
+    <link href="http://yoursite.com/wiki/%E5%88%A0%E9%99%A4list%E4%B8%AD%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/"/>
+    <id>http://yoursite.com/wiki/%E5%88%A0%E9%99%A4list%E4%B8%AD%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0/</id>
+    <published>2021-11-06T07:47:16.000Z</published>
+    <updated>2021-11-06T08:22:34.037Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="删除list中重复元素"><a href="#删除list中重复元素" class="headerlink" title="删除list中重复元素"></a>删除list中重复元素</h5><h6 id="使用set（set元素不可重复）"><a href="#使用set（set元素不可重复）" class="headerlink" title="使用set（set元素不可重复）"></a>使用set（set元素不可重复）</h6><pre><code>list = [&apos;1&apos;,&apos;1&apos;,&apos;2&apos;] list(set(list)) # [&apos;2&apos;,&apos;1&apos;]list = [&apos;1&apos;,&apos;1&apos;,&apos;2&apos;] list(set(list)).sort(key=list.index) # [&apos;1&apos;,&apos;2&apos;]</code></pre><h6 id="使用dict（key不能重复）"><a href="#使用dict（key不能重复）" class="headerlink" title="使用dict（key不能重复）"></a>使用dict（key不能重复）</h6><pre><code>list = [&apos;1&apos;,&apos;1&apos;,&apos;2&apos;] list({}.fromkeys(list).keys()) # dict.fromkeys(seq)，创建一个新字典，以seq中的元素做字典的键 # or list({}.fromkeys(list)) # [&apos;1&apos;,&apos;2&apos;]</code></pre><h6 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h6><pre><code>list = [&apos;1&apos;,&apos;1&apos;,&apos;2&apos;]list_new = []for i in list:    if not i in list_new:        list_new.append(i)print(list_new)[list_new.apped(i) for i in list if not i in list_new]print(list_new)</code></pre><h6 id="count计数"><a href="#count计数" class="headerlink" title="count计数"></a>count计数</h6><pre><code>list = [&apos;1&apos;,&apos;1&apos;,&apos;2&apos;]n = 0while n &lt; len(list):    if list.count(list[n]) &gt; 1:        list.remove(list[n])        continue    n += 1print(list)</code></pre><h6 id="reduce函数"><a href="#reduce函数" class="headerlink" title="reduce函数"></a>reduce函数</h6><pre><code>from functools import reducelist = [&apos;1&apos;,&apos;1&apos;,&apos;2&apos;]list_new = reduce(lambda x,y:x if y in x else x+ [y],[[]] = list)print(list_new)</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;删除list中重复元素&quot;&gt;&lt;a href=&quot;#删除list中重复元素&quot; class=&quot;headerlink&quot; title=&quot;删除list中重复元素&quot;&gt;&lt;/a&gt;删除list中重复元素&lt;/h5&gt;&lt;h6 id=&quot;使用set（set元素不可重复）&quot;&gt;&lt;a href=&quot;#使</summary>
+      
+    
+    
+    
+    <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>test_11</title>
