@@ -40,8 +40,8 @@
   
   <entry>
     <title>test_11</title>
-    <link href="http://yoursite.com/wiki/test-11/"/>
-    <id>http://yoursite.com/wiki/test-11/</id>
+    <link href="http://yoursite.com/wiki/%E5%AE%9A%E4%B9%89/"/>
+    <id>http://yoursite.com/wiki/%E5%AE%9A%E4%B9%89/</id>
     <published>2021-11-03T14:26:38.403Z</published>
     <updated>2021-11-04T13:43:50.747Z</updated>
     
@@ -62,8 +62,8 @@
   
   <entry>
     <title>test1</title>
-    <link href="http://yoursite.com/wiki/test1/"/>
-    <id>http://yoursite.com/wiki/test1/</id>
+    <link href="http://yoursite.com/wiki/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://yoursite.com/wiki/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</id>
     <published>2021-11-02T13:29:15.116Z</published>
     <updated>2021-11-04T15:00:08.810Z</updated>
     
