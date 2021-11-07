@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-11-06T08:26:30.389Z</updated>
+  <updated>2021-11-07T04:56:24.295Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>logging</title>
+    <link href="http://yoursite.com/wiki/logging/"/>
+    <id>http://yoursite.com/wiki/logging/</id>
+    <published>2021-11-07T04:55:34.000Z</published>
+    <updated>2021-11-07T04:56:24.295Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1-logging模块简介"><a href="#1-logging模块简介" class="headerlink" title="1.logging模块简介"></a>1.logging模块简介</h4><p>&emsp;&emsp;logging模块是Python内置的标准模块，主要用于输出运行日志，可以设置输出日志的等级、日志保存路径、日志文件回滚等</p><h4 id="2-logging基本使用"><a href="#2-logging基本使用" class="headerlink" title="2.logging基本使用"></a>2.logging基本使用</h4><p>&emsp;&emsp;配置logging基本的设置（使用logging.basicConfig函数）：</p><ul><li>filename：指定日志文件名；</li><li>filemode：和file函数意义相同，指定日志文件的打开模式，’w’或者’a’；</li><li>datefmt：指定时间格式，同time.strftime()；</li><li>level：设置日志级别（debug、info、warning、error以及critical），默认为logging.WARNNING；</li><li>stream：指定将日志的输出流，可以指定输出到sys.stderr，sys.stdout或者文件，默认输出到sys.stderr，当stream和filename同时指定时，stream被忽略；</li><li>format：指定输出的格式和内容，format可以输出很多有用的信息：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- %(levelno)s：   打印日志级别的数值</span><br><span class="line">- %(levelname)s： 打印日志级别的名称</span><br><span class="line">- %(pathname)s：  打印当前执行程序的路径，其实就是sys.argv[0]</span><br><span class="line">- %(filename)s：  打印当前执行程序名</span><br><span class="line">- %(funcName)s：  打印日志的当前函数</span><br><span class="line">- %(lineno)d：    打印日志的当前行号</span><br><span class="line">- %(asctime)s：   打印日志的时间</span><br><span class="line">- %(thread)d：    打印线程ID</span><br><span class="line">- %(threadName)s：打印线程名称</span><br><span class="line">- %(process)d：   打印进程ID</span><br><span class="line">- %(message)s：   打印日志信息</span><br></pre></td></tr></table></figure></li></ul><p><strong>例如：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line"></span><br><span class="line">logging.basicConfig(level = logging.INFO,format = &apos;%(asctime)s - %(name)s - %(levelname)s - %(message)s&apos;)</span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line"></span><br><span class="line">logger.info(&quot;Start print log&quot;)</span><br><span class="line">logger.debug(&quot;Do something&quot;)</span><br><span class="line">logger.warning(&quot;Something maybe fail.&quot;)</span><br><span class="line">logger.info(&quot;Finish&quot;)</span><br></pre></td></tr></table></figure><p>运行后，控制台输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2019-03-20 17:19:05,105 - __main__ - INFO - Start print log</span><br><span class="line">2019-03-20 17:19:05,105 - __main__ - WARNING - Something maybe fail.</span><br><span class="line">2019-03-20 17:19:05,105 - __main__ - INFO - Finish</span><br></pre></td></tr></table></figure><h4 id="3-将日志写入文件"><a href="#3-将日志写入文件" class="headerlink" title="3.将日志写入文件"></a>3.将日志写入文件</h4><p>&emsp;&emsp;logging中包含的handler主要有如下几种</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">- AddHandler:          logger.addHandler;添加处理方式</span><br><span class="line">- StreamHandler：      logging.StreamHandler；日志输出到流，可以是sys.stderr，sys.stdout或者文件</span><br><span class="line">- FileHandler：        logging.FileHandler；日志输出到文件</span><br><span class="line">- BaseRotatingHandler：logging.handlers.BaseRotatingHandler；基本的日志回滚方式</span><br><span class="line">- RotatingHandler：    logging.handlers.RotatingHandler；日志回滚方式，支持日志文件最大数量和日志文件回滚</span><br><span class="line">- TimeRotatingHandler：logging.handlers.TimeRotatingHandler；日志回滚方式，在一定时间区域内回滚日志文件</span><br><span class="line">- SocketHandler：      logging.handlers.SocketHandler；远程输出日志到TCP/IP sockets</span><br><span class="line">- DatagramHandler：    logging.handlers.DatagramHandler；远程输出日志到UDP sockets</span><br><span class="line">- SMTPHandler：        logging.handlers.SMTPHandler；远程输出日志到邮件地址</span><br><span class="line">- SysLogHandler：      logging.handlers.SysLogHandler；日志输出到syslog</span><br><span class="line">- NTEventLogHandler：  logging.handlers.NTEventLogHandler；远程输出日志到Windows NT/2000/XP的事件日志</span><br><span class="line">- MemoryHandler：      logging.handlers.MemoryHandler；日志输出到内存中的指定buffer</span><br><span class="line">- HTTPHandler：        logging.handlers.HTTPHandler；通过&quot;GET&quot;或者&quot;POST&quot;远程输出到HTTP服务器</span><br></pre></td></tr></table></figure><p><strong>例如：</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import logging</span><br><span class="line"></span><br><span class="line">logger = logging.getLogger(__name__)</span><br><span class="line">logger.setLevel(logging.INFO)</span><br><span class="line"></span><br><span class="line">handler1 = logging.FileHandler(&quot;log.txt&quot;)</span><br><span class="line">handler2 = logging.StreamHandler() </span><br><span class="line"># handler2.setLevel(logging.DEBUG) </span><br><span class="line"></span><br><span class="line">formatter = logging.Formatter(&apos;%(asctime)s - %(name)s - %(levelname)s - %(message)s&apos;)</span><br><span class="line">handler1.setFormatter(formatter)</span><br><span class="line">handler2.setFormatter(formatter)</span><br><span class="line"></span><br><span class="line">logger.addHandler(handler1)</span><br><span class="line">logger.addHandler(handler2)</span><br><span class="line"></span><br><span class="line">logger.info(&quot;Start print log&quot;)</span><br><span class="line">logger.debug(&quot;Do something&quot;)</span><br><span class="line">logger.warning(&quot;Something maybe fail.&quot;)</span><br><span class="line">logger.info(&quot;Finish&quot;)</span><br></pre></td></tr></table></figure><p>运行后，控制台和文件log.txt输出：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2019-03-20 17:33:31,349 - __main__ - INFO - Start print log</span><br><span class="line">2019-03-20 17:33:31,349 - __main__ - WARNING - Something maybe fail.</span><br><span class="line">2019-03-20 17:33:31,349 - __main__ - INFO - Finish</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;1-logging模块简介&quot;&gt;&lt;a href=&quot;#1-logging模块简介&quot; class=&quot;headerlink&quot; title=&quot;1.logging模块简介&quot;&gt;&lt;/a&gt;1.logging模块简介&lt;/h4&gt;&lt;p&gt;&amp;emsp;&amp;emsp;logging模块是Pyth</summary>
+      
+    
+    
+    
+    <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>查看log</title>
+    <link href="http://yoursite.com/wiki/%E6%9F%A5%E7%9C%8Blog/"/>
+    <id>http://yoursite.com/wiki/%E6%9F%A5%E7%9C%8Blog/</id>
+    <published>2021-11-06T08:39:40.000Z</published>
+    <updated>2021-11-06T13:08:54.929Z</updated>
+    
+    <content type="html"><![CDATA[<h6 id="vi-vim"><a href="#vi-vim" class="headerlink" title="vi/vim"></a>vi/vim</h6><pre><code>vi/vim/关键字  # 向下查找，按n查找下一个?关键字  # 向上查找，按n查找下一个esc     # 退出</code></pre><h6 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h6><pre><code>tail [必要参数] [选择参数] [文件]    -f 循环读取    -q 不显示处理信息    -v 显示详细的处理信息    -c&lt;数目&gt; 显示的字节数    -n&lt;行数&gt; 显示行数Ctrl+c 是退出tail命令</code></pre><p>例如：</p><pre><code>tail -n 100 catalina.out 查询日志尾部最后100行的日志;tail -n +100 catalina.out 查询100行之后的所有日志;tail -fn 100  catalina.out 循环实时查看最后100行记录(最常用的)配合着grep用, 例如 : tail -fn 100 catalina.out | grep   -- &apos;关键字&apos;如果一次性查询的数据量太大,可以进行翻页查看,例如:tail -n 6000  catalina.out |more -100 可以进行多屏显示(ctrl + f 或者 空格键可以快捷键)</code></pre><h6 id="head"><a href="#head" class="headerlink" title="head"></a>head</h6><pre><code>head -n  1000  catalina.out   //查询日志文件中的头10行日志;head -n -1000  catalina.out   //查询日志文件除了最后10行的其他所有日志;</code></pre><h6 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h6><pre><code>cat filename                    // 一次显示整个文件 cat &gt; filename                 //从键盘创建一个文件 cat file1 file2 &gt; file            //将几个文件合并为一个文件,只能创建新文件,不能编辑已有文件.cat -n textfile1 &gt; textfile2 //将一个日志文件的内容追加到另外一个 : cat : &gt;textfile2                // 清空一个日志文件注意：     &gt;意思是创建，       &gt;&gt;是追加。</code></pre><h6 id="tac"><a href="#tac" class="headerlink" title="tac"></a>tac</h6><pre><code>tac 则是由最后一行到第一行反向在萤幕上显示出来</code></pre><h6 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h6><pre><code>sed -n &apos;/2019-01-17 10:07:10/,/2019-02-14 16:54:01/p&apos;</code></pre><h6 id="less"><a href="#less" class="headerlink" title="less"></a>less</h6><pre><code>less log.log shift + G 命令到文件尾部  然后输入 ？加上你要搜索的关键字例如 ？1213shift+n  关键字之间进行切换</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h6 id=&quot;vi-vim&quot;&gt;&lt;a href=&quot;#vi-vim&quot; class=&quot;headerlink&quot; title=&quot;vi/vim&quot;&gt;&lt;/a&gt;vi/vim&lt;/h6&gt;&lt;pre&gt;&lt;code&gt;vi/vim
+/关键字  # 向下查找，按n查找下一个
+?关键字  # 向上查找，按n查找下</summary>
+      
+    
+    
+    
+    <category term="linux" scheme="http://yoursite.com/categories/linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>删除list中重复元素</title>

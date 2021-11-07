@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/wiki/logging/</loc>
+    
+    <lastmod>2021-11-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/wiki/%E6%9F%A5%E7%9C%8Blog/</loc>
+    
+    <lastmod>2021-11-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/wiki/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</loc>
     
     <lastmod>2021-11-06</lastmod>
@@ -53,7 +67,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,7 +75,7 @@
   
   <url>
     <loc>http://yoursite.com/tags/testpage/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -70,7 +84,14 @@
   
   <url>
     <loc>http://yoursite.com/categories/python/</loc>
-    <lastmod>2021-11-06</lastmod>
+    <lastmod>2021-11-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/linux/</loc>
+    <lastmod>2021-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
