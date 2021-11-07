@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <title>re | Blog</title>
+    
+    
+        <meta name="keywords" content="re">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="1.re简介&amp;emsp;&amp;emsp;re模块是python中处理正则表达式的一个模块。&amp;emsp;&amp;emsp;re常用方法有findall()、finditer()、search()、match()、split()、sub()、subn()、compile() 2.findall()方法&amp;emsp;&amp;emsp;findall(pattern, string, flags=0)，从字符串中找出符合模">
+<meta property="og:type" content="article">
+<meta property="og:title" content="re">
+<meta property="og:url" content="http://yoursite.com/wiki/re/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="1.re简介&amp;emsp;&amp;emsp;re模块是python中处理正则表达式的一个模块。&amp;emsp;&amp;emsp;re常用方法有findall()、finditer()、search()、match()、split()、sub()、subn()、compile() 2.findall()方法&amp;emsp;&amp;emsp;findall(pattern, string, flags=0)，从字符串中找出符合模">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-11-07T04:59:40.451Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="re">
+<meta name="twitter:description" content="1.re简介&amp;emsp;&amp;emsp;re模块是python中处理正则表达式的一个模块。&amp;emsp;&amp;emsp;re常用方法有findall()、finditer()、search()、match()、split()、sub()、subn()、compile() 2.findall()方法&amp;emsp;&amp;emsp;findall(pattern, string, flags=0)，从字符串中找出符合模">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Entradas',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categorias',
+            TAGS: 'Etiquetas',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>Categorias</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            linux
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/查看log/">查看log</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/数据转换/">数据转换</a></li>  <li class="file"><a href="/wiki/定义/">定义</a></li>  <li class="file"><a href="/wiki/删除list中重复元素/">删除list中重复元素</a></li>  <li class="file"><a href="/wiki/logging/">logging</a></li>  <li class="file active"><a href="/wiki/re/">re</a></li>  <li class="file"><a href="/wiki/正则基础/">正则基础</a></li>  <li class="file"><a href="/wiki/json/">json</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            robotframework
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/常用关键字/">常用关键字</a></li>  <li class="file"><a href="/wiki/字典/">字典</a></li>  <li class="file"><a href="/wiki/if/">if</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/test/">test</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-re" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            re
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catálogo</strong>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-re简介"><span class="toc-number">1.</span> <span class="toc-text">1.re简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-findall-方法"><span class="toc-number">2.</span> <span class="toc-text">2.findall()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-finditer-方法"><span class="toc-number">3.</span> <span class="toc-text">3.finditer()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-search-方法"><span class="toc-number">4.</span> <span class="toc-text">4.search()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-match-方法"><span class="toc-number">5.</span> <span class="toc-text">5.match()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-split-方法"><span class="toc-number">6.</span> <span class="toc-text">6.split()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-sub-方法"><span class="toc-number">7.</span> <span class="toc-text">7.sub()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-subn-方法"><span class="toc-number">8.</span> <span class="toc-text">8.subn()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-compile-方法"><span class="toc-number">9.</span> <span class="toc-text">9.compile()方法</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h4 id="1-re简介"><a href="#1-re简介" class="headerlink" title="1.re简介"></a>1.re简介</h4><p>&emsp;&emsp;re模块是python中处理正则表达式的一个模块。<br>&emsp;&emsp;re常用方法有findall()、finditer()、search()、match()、split()、sub()、subn()、compile()</p>
+<h4 id="2-findall-方法"><a href="#2-findall-方法" class="headerlink" title="2.findall()方法"></a>2.findall()方法</h4><p>&emsp;&emsp;findall(pattern, string, flags=0)，从字符串中找出符合模式的字符序列，返回值为list类型，list元素为匹配出的各个字符串。<br><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">a = re.findall(&apos;a&apos;,&apos;abac&apos;)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">b = &quot;AbCdEf&quot;</span><br><span class="line">x = re.findall(&apos;c&apos;,b)</span><br><span class="line">y = re.findall(&apos;c&apos;, b, re.I)</span><br><span class="line">print(x)</span><br><span class="line">print(y)</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;, &apos;a&apos;]</span><br><span class="line">[]</span><br><span class="line">[&apos;C&apos;]</span><br></pre></td></tr></table></figure>
+<h4 id="3-finditer-方法"><a href="#3-finditer-方法" class="headerlink" title="3.finditer()方法"></a>3.finditer()方法</h4><p>&emsp;&emsp;finditer(pattern, string, flags=0),执行与findall()相同的操作，但返回一个生产器。<br><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">ret = re.finditer(&apos;\d&apos;, &apos;ds3sy4784a&apos;)   #finditer返回一个存放匹配结果的迭代器</span><br><span class="line">print(ret)  # &lt;callable_iterator object at 0x10195f940&gt;</span><br><span class="line">print(next(ret).group())  #查看第一个结果</span><br><span class="line">print(next(ret).group())  #查看第二个结果</span><br><span class="line">print([i.group() for i in ret])  #查看剩余的左右结果</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;callable_iterator object at 0x0000025B7AB82F28&gt;</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">[&apos;7&apos;, &apos;8&apos;, &apos;4&apos;]</span><br></pre></td></tr></table></figure>
+<h4 id="4-search-方法"><a href="#4-search-方法" class="headerlink" title="4.search()方法"></a>4.search()方法</h4><p>&emsp;&emsp;search(pattern, string, flags=0)，在整个字符串中查找满足匹配条件的字符或者字符串，一旦找到一个就不再继续查找，并返回包含查找值的对象（match对象），可以用.group()方法进行查看。<br><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">a = re.search(&apos;a&apos;,&apos;Abac&apos;)</span><br><span class="line">print(a.group())</span><br><span class="line"></span><br><span class="line">b = re.search(&apos;a&apos;,&apos;Abac&apos;,re.I)</span><br><span class="line">print(b.group())</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+<h4 id="5-match-方法"><a href="#5-match-方法" class="headerlink" title="5.match()方法"></a>5.match()方法</h4><p>&emsp;&emsp;match(pattern, string, flags=0)，从开头位置查找是否满足匹配条件，如果没有就会返回None，如果有，则会返回一个包含查找值的对象（match对象），可以用group()方法进行查看。<br><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">a = re.match(&apos;a&apos;,&apos;Abac&apos;)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">a = re.match(&apos;a&apos;,&apos;Abac&apos;,re.I)</span><br><span class="line">print(a.group())</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">None</span><br><span class="line">A</span><br></pre></td></tr></table></figure>
+<h4 id="6-split-方法"><a href="#6-split-方法" class="headerlink" title="6.split()方法"></a>6.split()方法</h4><p>&emsp;&emsp;split(pattern,string,maxsplit=0,flags=0)，根据正则匹配分割字符串。<br><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">a = re.split(&apos;a&apos;,&apos;Abac&apos;)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&apos;Ab&apos;, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
+<h4 id="7-sub-方法"><a href="#7-sub-方法" class="headerlink" title="7.sub()方法"></a>7.sub()方法</h4><p>&emsp;&emsp;sub(pattern,repl,string,count=0,flags=0)，替换匹配成功的指定位置字符串。<br><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">a = re.sub(&apos;b&apos;,&apos;B&apos;,&apos;Abac&apos;)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">b = re.sub(&apos;a&apos;,&apos;A&apos;,&apos;abac&apos;,1)</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ABac</span><br><span class="line">Abac</span><br></pre></td></tr></table></figure>
+<h4 id="8-subn-方法"><a href="#8-subn-方法" class="headerlink" title="8.subn()方法"></a>8.subn()方法</h4><p>&emsp;&emsp;subn(pattern, repl, string, count=0, flags=0),执行与sub()相同的操作，但返回一个元组（new_string， number_of_subs_made)。<br><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">a = re.subn(&apos;a&apos;,&apos;A&apos;,&apos;abac&apos;,1)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(&apos;Abac&apos;, 1)</span><br></pre></td></tr></table></figure>
+<h4 id="9-compile-方法"><a href="#9-compile-方法" class="headerlink" title="9.compile()方法"></a>9.compile()方法</h4><p>&emsp;&emsp;compile(pattern, flags=0)，将正则表达式模式编译成一个正则表达式对象，它可以用于匹配使用它的match ()和search ()方法。<br><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">x = re.compile(&apos;a&apos;)</span><br><span class="line">a = x.search(&apos;Abac&apos;)</span><br><span class="line">print(a.group())</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a</span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/正则基础/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Más nuevo</strong>
+            <div class="article-nav-title">
+                
+                    正则基础
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/logging/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Más viejo</strong>
+            <div class="article-nav-title">logging</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>

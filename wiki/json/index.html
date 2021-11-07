@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    
+    <title>json | Blog</title>
+    
+    
+        <meta name="keywords" content="json">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="1.json的介绍&amp;emsp;&amp;emsp;JSON全称是(JavaScript Object Notation)是一种轻量级的数据格式。Python标准库中的json模块提供了JSON数据的处理功能。&amp;emsp;&amp;emsp;json模块常用的四个方法： dumps、dump、loads、load 2.dumps&amp;emsp;&amp;emsp;json.dumps方法可以将Python对象（即字典）转换为一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="json">
+<meta property="og:url" content="http://yoursite.com/wiki/json/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="1.json的介绍&amp;emsp;&amp;emsp;JSON全称是(JavaScript Object Notation)是一种轻量级的数据格式。Python标准库中的json模块提供了JSON数据的处理功能。&amp;emsp;&amp;emsp;json模块常用的四个方法： dumps、dump、loads、load 2.dumps&amp;emsp;&amp;emsp;json.dumps方法可以将Python对象（即字典）转换为一">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-11-07T05:01:57.527Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="json">
+<meta name="twitter:description" content="1.json的介绍&amp;emsp;&amp;emsp;JSON全称是(JavaScript Object Notation)是一种轻量级的数据格式。Python标准库中的json模块提供了JSON数据的处理功能。&amp;emsp;&amp;emsp;json模块常用的四个方法： dumps、dump、loads、load 2.dumps&amp;emsp;&amp;emsp;json.dumps方法可以将Python对象（即字典）转换为一">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+</head>
+</html>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Blog</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Entradas',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categorias',
+            TAGS: 'Etiquetas',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id="categories">
+        <h3 class="widget-title">
+            <span>Categorias</span>
+            &nbsp;
+            <a id="allExpand" href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree"> 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            linux
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/查看log/">查看log</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            python
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/数据转换/">数据转换</a></li>  <li class="file"><a href="/wiki/定义/">定义</a></li>  <li class="file"><a href="/wiki/删除list中重复元素/">删除list中重复元素</a></li>  <li class="file"><a href="/wiki/logging/">logging</a></li>  <li class="file"><a href="/wiki/re/">re</a></li>  <li class="file"><a href="/wiki/正则基础/">正则基础</a></li>  <li class="file active"><a href="/wiki/json/">json</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            robotframework
+                        </a>
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/常用关键字/">常用关键字</a></li>  <li class="file"><a href="/wiki/字典/">字典</a></li>  <li class="file"><a href="/wiki/if/">if</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/wiki/test/">test</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-json" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/python/">python</a>
+    </div>
+
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            json
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catálogo</strong>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-json的介绍"><span class="toc-number">1.</span> <span class="toc-text">1.json的介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-dumps"><span class="toc-number">2.</span> <span class="toc-text">2.dumps</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-dump"><span class="toc-number">3.</span> <span class="toc-text">3.dump</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-loads"><span class="toc-number">4.</span> <span class="toc-text">4.loads</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-load"><span class="toc-number">5.</span> <span class="toc-text">5.load</span></a></li></ol>
+                </div>
+            
+        
+        
+            <h4 id="1-json的介绍"><a href="#1-json的介绍" class="headerlink" title="1.json的介绍"></a>1.json的介绍</h4><p>&emsp;&emsp;JSON全称是(JavaScript Object Notation)是一种轻量级的数据格式。Python标准库中的json模块提供了JSON数据的处理功能。<br>&emsp;&emsp;json模块常用的四个方法： dumps、dump、loads、load</p>
+<h4 id="2-dumps"><a href="#2-dumps" class="headerlink" title="2.dumps"></a>2.dumps</h4><p>&emsp;&emsp;json.dumps方法可以将Python对象（即字典）转换为一个表示JONS数据的字符串.<br>&emsp;&emsp;在默认实现中, json.dumps可以处理的Python对象, 及其所有的属性值, 类型必须为dict, list, tuple, str, float或者int<br>&emsp;&emsp;它的完整接口签名如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json.dumps(obj, *, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, **kw)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">obj：要转换的数据对象</span><br><span class="line">ensure_ascii：用来控制生成的JSON字符串的编码；默认为True, 此时, 所有的非ASCII码字条都会转义. False会保持原有编码, 限UTF-8</span><br><span class="line">check_circular：检查Python对象中是否有循环引用, 如果发现了循环引用, 就会抛出异常</span><br><span class="line">indent：用来控制JSON字符串的换行和缩进效果；①为0或者负数时, JSON字符会包含换行；②为正整数时, 除了换行, JSON还会以指定数量的空格为单位在对象层次间进行缩进；③是str, 此时, JSON会以str内容为单位进行缩进, 比如制表符\t</span><br></pre></td></tr></table></figure>
+<p><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">print(json.dumps(1))</span><br><span class="line">print(type(json.dumps(1)))</span><br><span class="line">print(json.dumps(&quot;1&quot;))</span><br><span class="line">print(type(json.dumps(&quot;1&quot;)))</span><br><span class="line">print(json.dumps(&quot;中文&quot;))</span><br><span class="line">print(type(json.dumps(&quot;中文&quot;)))</span><br><span class="line"></span><br><span class="line">dict = &#123;&quot;name&quot;:&quot;Tom&quot;, &quot;age&quot;:23,&apos;b&apos;: &#123;&apos;x&apos;: 321, &apos;y&apos;: &apos;ABC&apos;&#125;&#125;</span><br><span class="line">print(json.dumps(dict))</span><br><span class="line">print(type(json.dumps(dict)))</span><br><span class="line">print(json.dumps(dict,indent=-1))</span><br><span class="line">print(json.dumps(dict,indent=4))</span><br><span class="line">print(json.dumps(dict,indent=&apos;\t&apos;))</span><br></pre></td></tr></table></figure>
+<p>返回执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">&lt;class &apos;str&apos;&gt;</span><br><span class="line">&quot;1&quot;</span><br><span class="line">&lt;class &apos;str&apos;&gt;</span><br><span class="line">&quot;\u4e2d\u6587&quot;</span><br><span class="line">&lt;class &apos;str&apos;&gt;</span><br><span class="line">&#123;&quot;name&quot;: &quot;Tom&quot;, &quot;age&quot;: 23, &quot;b&quot;: &#123;&quot;x&quot;: 321, &quot;y&quot;: &quot;ABC&quot;&#125;&#125;</span><br><span class="line">&lt;class &apos;str&apos;&gt;</span><br><span class="line">&#123;</span><br><span class="line">&quot;name&quot;: &quot;Tom&quot;,</span><br><span class="line">&quot;age&quot;: 23,</span><br><span class="line">&quot;b&quot;: &#123;</span><br><span class="line">&quot;x&quot;: 321,</span><br><span class="line">&quot;y&quot;: &quot;ABC&quot;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;Tom&quot;,</span><br><span class="line">    &quot;age&quot;: 23,</span><br><span class="line">    &quot;b&quot;: &#123;</span><br><span class="line">        &quot;x&quot;: 321,</span><br><span class="line">        &quot;y&quot;: &quot;ABC&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">	&quot;name&quot;: &quot;Tom&quot;,</span><br><span class="line">	&quot;age&quot;: 23,</span><br><span class="line">	&quot;b&quot;: &#123;</span><br><span class="line">		&quot;x&quot;: 321,</span><br><span class="line">		&quot;y&quot;: &quot;ABC&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-dump"><a href="#3-dump" class="headerlink" title="3.dump"></a>3.dump</h4><p>&emsp;&emsp;当JSON数据是保存在一个文件中的时候, json.load方法可以用来从这个文件中读取数据, 并转换为Python对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json.dump(obj, fp, skipkeys=False, ensure_ascii=True, check_circular=True,allow_nan=True,cls=None, indent=None, separators=None,default=None, sort_keys=False, **kw)</span><br></pre></td></tr></table></figure>
+<p><strong>例如：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">with open(&apos;test.json&apos;, mode=&apos;a&apos;) as f:</span><br><span class="line">    json.dump(&#123;&apos;a&apos;:1234&#125;,f)</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-loads"><a href="#4-loads" class="headerlink" title="4.loads"></a>4.loads</h4><p>&emsp;&emsp;json.loads方法可以将包含了一个JSON数据的str, bytes或者bytearray对象, 转化为一个Python Dictionary.<br>&emsp;&emsp;它的完型接口签名如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json.loads(s, encoding=None, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)</span><br></pre></td></tr></table></figure>
+<p><strong>例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">dict = &#123;&quot;name&quot;:&quot;Tom&quot;, &quot;age&quot;:23,&apos;b&apos;: &#123;&apos;x&apos;: 321, &apos;y&apos;: &apos;ABC&apos;&#125;&#125;</span><br><span class="line">print(json.dumps(dict))</span><br><span class="line">print(type(json.dumps(dict)))</span><br><span class="line"></span><br><span class="line">print(json.loads(json.dumps(dict)))</span><br><span class="line">print(type(json.loads(json.dumps(dict))))</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;name&quot;: &quot;Tom&quot;, &quot;age&quot;: 23, &quot;b&quot;: &#123;&quot;x&quot;: 321, &quot;y&quot;: &quot;ABC&quot;&#125;&#125;</span><br><span class="line">&lt;class &apos;str&apos;&gt;</span><br><span class="line">&#123;&apos;name&apos;: &apos;Tom&apos;, &apos;age&apos;: 23, &apos;b&apos;: &#123;&apos;x&apos;: 321, &apos;y&apos;: &apos;ABC&apos;&#125;&#125;</span><br><span class="line">&lt;class &apos;dict&apos;&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="5-load"><a href="#5-load" class="headerlink" title="5.load"></a>5.load</h4><p>&emsp;&emsp;当JSON数据是保存在一个文件中的时候, json.load方法可以用来从这个文件中读取数据, 并转换为Python对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json.load(fp, cls=None, object_hook=None, parse_float=None, parse_int=None, parse_constant=None, object_pairs_hook=None, **kw)</span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/wiki/常用关键字/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Más nuevo</strong>
+            <div class="article-nav-title">
+                
+                    常用关键字
+                
+            </div>
+        </a>
+    
+    
+        <a href="/wiki/正则基础/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Más viejo</strong>
+            <div class="article-nav-title">正则基础</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
