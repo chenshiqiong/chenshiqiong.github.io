@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/wiki/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</loc>
+    
+    <lastmod>2021-12-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/wiki/if/</loc>
     
     <lastmod>2021-11-07</lastmod>
@@ -58,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/wiki/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</loc>
-    
-    <lastmod>2021-11-06</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/wiki/%E5%AE%9A%E4%B9%89/</loc>
     
     <lastmod>2021-11-06</lastmod>
@@ -109,7 +109,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2021-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -117,7 +117,7 @@
   
   <url>
     <loc>http://yoursite.com/tags/testpage/</loc>
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2021-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -126,21 +126,28 @@
   
   <url>
     <loc>http://yoursite.com/categories/python/</loc>
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2021-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/robotframework/</loc>
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2021-12-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/python/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2021-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/linux/</loc>
-    <lastmod>2021-11-16</lastmod>
+    <lastmod>2021-12-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
